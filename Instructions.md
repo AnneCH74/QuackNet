@@ -22,18 +22,14 @@ Symfony 6.3 :
 
 Doctrine :
 
-    Doctrine ORM documentation
+    Doctrine ORM documentation : https://www.doctrine-project.org/projects/doctrine-orm/en/2.16/index.html
     Symfony’s doctrine documentation
 
 Twig :
 
     Twig documentation
     Symfony’s twig usages
-
-Avantage de Twig = 
-* syntaxe simplifiée. Au lieu d'écrire <?php echo $var ?> il suffit d'écrire {{var}}
-- paramétrage de tâches réccurentes possible
-   
+  
    
 Installer Symfony sur PHP Storm => https://symfony.com/doc/current/setup.html & https://symfony.com/download
 
@@ -53,42 +49,4 @@ php -r "unlink('composer-setup.php');"
 
 
 Create a first page in Symfony : https://symfony.com/doc/current/page_creation.html
-Creating a new page - whether it's an HTML page or a JSON endpoint - is a two-step process:
-
-1) Create a controller: A controller is the PHP function you write that builds the page. You take the incoming request information 
-and use it to create a Symfony Response object, which can hold HTML content, a JSON string or even a binary file like an image or PDF;
-2) Create a route: A route is the URL (e.g. /about) to your page and points to a controller.
-
-Une ROUTE est définie dans une classe et commence par # :
-
-    class HomeController extends AbstractController
-    {
-      #[Route('/')]
-      public function home(): Response
-    {
-      return $this->render('home/index.html.twig', [
-      'controller_name' => 'HomeController',
-      ]);
-      }
-    }
-
-
-Voir toutes mes routes : php bin/console debug:router
-Ici :
-create new quack = coinCoin/new
-show all the quacks = coinCoin/quackList
-show a quack = coinCoin/{id}
-edit a quack = coinCoin/{id}/edit
-delete a quack = coinCoin/{id}
-
-
-
-Create a entity Quack defined by a "content : text" & "created_at : date time"
-
-Lancer le server symfony => dans le terminal écrire   symfony server:start  puis faire entrée
-
-
-Réaligner correctement les lignes de code :
-ctrl + alt + L
-
 
