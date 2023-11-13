@@ -92,3 +92,18 @@ Réaligner correctement les lignes de code :
 ctrl + alt + L
 
 
+https://symfony.com/doc/current/security.html#the-user
+Créer une classe user : $ php bin/console make:user
+Créer ou modifier une entité : $ php bin/console make:entity
+
+
+MIGRATION :
+https://symfony.com/doc/current/doctrine.html#doctrine-creating-the-database-tables-schema
+Une fois la classe définie, je peux créer la migration qui va générer la requête SQL correspondante à l'insertion de la base de données correspondante :
+$ php bin/console make:migration
+PUIS
+la migration permet de MAJ la BDD et de créer la table correspondante :
+$ php bin/console doctrine:migrations:migrate
+
+
+
