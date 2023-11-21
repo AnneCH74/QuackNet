@@ -2,3 +2,137 @@
     color: #B0413E;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.section {
+    background: linear-gradient(90deg, hsla(319, 81%, 27%, 1) 0%, hsla(347, 94%, 48%, 1) 100%);
+}
+
+.container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-page{
+    display: flex;
+    padding-top: 40px;
+}
+
+.sidebar{
+    width: 300px;
+    padding: 10px;
+}
+
+.sidebar a{
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+.home-content {
+    text-align: center;
+    color: #dbeafe;
+    padding: 100px 10px 200px 10px;
+    width: 100%;
+    /background-image: linear-gradient(rgba(46, 47, 66, 0.5), rgba(46, 47, 66, 0.5)), url(../img/dlake.jpg);/
+    background-size: cover;
+}
+
+.post {
+    margin-bottom: 20px;
+    color: #dbeafe;
+}
+
+.link{
+    text-decoration: none;
+    display: block;
+}
+
+.wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    max-width:500px;
+    border: solid 2px #d35119;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(211, 158, 25, 0.29);
+}
+
+.btn {
+    font-family: Inter;
+    font-size: 14px;
+    color: #dbeafe;
+    background-color: #1d7ba6;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-left: 15px;
+}
+.btn:hover{
+    background-color: #da1193;
+}
+
+.post-format{
+    display: flex;
+    align-items: center;
+}
+
+.post-date{
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.create-btn{
+    padding: 12px;
+    max-width: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: darkblue;
+}
+
+.create-btn:hover {
+    border: solid 2px #f1520d;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+
+.create-form-wrapper{
+    display: flex;
+}
+
+.create-form{
+    margin-top: 50px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.custom-photo-class{
+    color: #d35119;
+}
+
+.label{
+    color: #d35119;
+}
+
+.custom-content-class {
+    height: 80px;
+    width: 500px;
+    margin-bottom: 30px;
+}

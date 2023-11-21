@@ -12,8 +12,7 @@ class CoinCoinType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Content')
-            ->add('Created_at')
+            ->add('content')
         ;
     }
 

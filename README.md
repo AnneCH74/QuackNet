@@ -32,7 +32,7 @@ Twig :
 
 Avantage de Twig = 
 * syntaxe simplifiée. Au lieu d'écrire <?php echo $var ?> il suffit d'écrire {{var}}
-- paramétrage de tâches réccurentes possible
+- paramétrage de tâches récurrentes possible
    
    
 Installer Symfony sur PHP Storm => https://symfony.com/doc/current/setup.html & https://symfony.com/download
@@ -90,6 +90,8 @@ Lancer le server symfony => dans le terminal écrire   symfony server:start  pui
 
 Réaligner correctement les lignes de code :
 ctrl + alt + L
+Supprimer dans le terminal la dernière commande :
+ctrl + c puis faire entrée
 
 
 https://symfony.com/doc/current/security.html#the-user
@@ -105,5 +107,14 @@ PUIS
 la migration permet de MAJ la BDD et de créer la table correspondante :
 $ php bin/console doctrine:migrations:migrate
 
+
+CLASSE:
+
+Les classes sont des moules, des patrons qui permettent de créer des objets en série sur le même modèle,
+elles sont généralement composées de trois parties :
+
+    Attributs
+    Constructeur
+    Méthodes
 
 

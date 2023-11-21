@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DuckRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -12,6 +14,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class Duck implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="duck")
+     */
+    private $comments;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -37,6 +45,14 @@ class Duck implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 15)]
     private ?string $duckname = null;
+
+    #[ORM\OneToMany(mappedBy: 'author', targetEntity: CoinCoin::class, orphanRemoval: true)]
+    private Collection $coinCoins;
+
+    public function __construct()
+    {
+        $this->coinCoins = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -143,4 +159,42 @@ class Duck implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, CoinCoin>
+     */
+    public function getCoinCoins(): Collection
+    {
+        return $this->coinCoins;
+    }
+
+    public function addCoinCoin(CoinCoin $coinCoin): static
+    {
+        if (!$this->coinCoins->contains($coinCoin)) {
+            $this->coinCoins->add($coinCoin);
+            $coinCoin->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCoinCoin(CoinCoin $coinCoin): static
+    {
+        if ($this->coinCoins->removeElement($coinCoin)) {
+            // set the owning side to null (unless already changed)
+            if ($coinCoin->getAuthor() === $this) {
+                $coinCoin->setAuthor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    // Getter and setter methods for $comments
+
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
 }

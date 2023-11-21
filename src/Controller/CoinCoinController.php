@@ -32,6 +32,7 @@ class CoinCoinController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $coinCoin->setAuthor($this->getUser());
             $entityManager->persist($coinCoin);
             $entityManager->flush();
 
